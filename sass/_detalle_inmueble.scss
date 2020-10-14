@@ -1,0 +1,83 @@
+#detalle-inmueble{
+    background-color: #f3f4f9;
+    .card-title{
+        color: $morado;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    .btn-success{
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+            color: $verde;
+        }
+    }
+    #redes{
+        .contenedor-img{
+            width: 38px;
+            height: auto;
+            img{
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    #caracteristicas{
+        ul{
+            list-style: none;
+            padding-left: 0;
+            li{
+                line-height: 1.6rem;
+            }
+            i{
+                margin-right: 0.5rem;
+                color: $morado;
+            }
+        }
+    }
+    #caracteristicas_details{
+        i{
+            font-size: 1.5rem;
+            padding:2px !important;
+            color: $morado;
+        }
+        .card{
+            border: 1px solid rgba(0,0,0,.125);
+        }
+        .card-header{
+            cursor: pointer;
+            background-color: #fff;
+            h2{
+                color: $morado;
+                font-weight: bold;
+                font-size: 1.5rem;
+                padding: .375rem .75rem;
+            }
+        }
+    }
+}
+
+#map {
+    height: 300px;
+    z-index: 20;
+}
+
+#foto360{
+    padding-bottom: 115%;
+    @include media(md){
+        padding-bottom: 90%;
+    }
+    @include media(lg){
+        padding-bottom: 48%;
+    }
+}
+
+.leaflet-control {
+    z-index: 200;
+}
+
+.leaflet-control {
+    z-index: 20;
+}

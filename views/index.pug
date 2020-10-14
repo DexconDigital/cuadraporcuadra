@@ -1,0 +1,205 @@
+extends layout
+
+block content
+    //- Datos para busqeudas Seo
+    link(itemprop='thumbnailUrl', href='https://www.cuadraporcuadra.com/static/images/logoCuadraPorCuadra.jpg')
+    span(itemprop='thumbnail', itemscope='', itemtype='http://schema.org/ImageObject')
+    link(itemprop='url', href='https://www.cuadraporcuadra.com/static/images/logoCuadraPorCuadra.jpg')
+    .container-fluid.body.p-0.m-0
+        section#slide-imagenes
+            #carouselinicio.carousel.slide(data-ride='carousel')
+                .carousel-inner.slide_principal
+                a.carousel-control-prev(href='#carouselinicio', role='button', data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselinicio', role='button', data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+                   
+        //- Parte del formulario
+        section#formulario
+            include includes/buscador.pug
+        section#destacadas.propiedades
+            .container-fluid
+                .row.justify-content-center
+                    .col-12.col-xl-11
+                        .layout-titulo
+                        h2.decoracion-titulo
+                            span.cabeza-titulo Propiedades destacadas
+                    .col-12.col-xl-10
+                        #inmuebles_destacados.row
+        section#servicios
+            .container-fluid
+                .row.justify-content-center
+                    .col-12.col-xl-11
+                        .layout-titulo
+                            h2.decoracion-titulo
+                                span.cabeza-titulo Nuestros Servicios
+                    .col-12.col-xl-10
+                        .row.over
+                            .col-12.col-md-6.col-xl-4.p-1
+                                #hovercard1.card.wow.fadeInLeft(data-wow-delay='0.8s')
+                                    .card-body
+                                        .contenedor1
+                                            i.fas.fa-sign
+                                        h5.card-title Arrendamiento, corretaje y venta de Inmuebles
+                                        p.card-text ¡Deja la promoción de tu inmueble en manos de profesionales!
+                                        #collapse1.collapse
+                                            p
+                                                | Te brindamos una promoción profesional y personalizada de tu inmueble,
+                                                | implementando un
+                                                | conjunto de estrategias comerciales enfocadas en encontrar el comprador o
+                                                | arrendatario
+                                                | adecuado en el menor tiempo posible, manteniéndote al tanto de la gestión
+                                                | comercial que
+                                                | podrás encontrar en nuestra plataforma virtual.
+                                        button#botonVerMas1.btn.btn-success(type='button', data-toggle='collapse', data-target='#collapse1', aria-expanded='false', aria-controls='collapseExample', onclick='botonver("botonVerMas1")') Ver más
+                            
+                                #hovercard2.card.mt-1.wow.fadeInLeft(data-wow-delay='0.8s')
+                                    .card-body
+                                        .contenedor2
+                                            i.fas.fa-user-tie
+                                        h5.card-title Administración de Inmuebles
+                                        p.card-text ¡Relájate el control está en nuestras manos!
+                                        #collapse2.collapse
+                                            p
+                                                | Te ofrecemos un área especializada en
+                                                | servició al cliente que atiende tus inquietudes, quejas, reclamos y
+                                                | sugerencias en el
+                                                | menor tiempo posible, también te mantiene informado con todos los temas de
+                                                | interés por
+                                                | medio de nuestra plataforma virtual. Contamos con un equipo de proveedores
+                                                | altamente
+                                                | capacitado que dispone de las mejores soluciones para el manteniendo y
+                                                | cuidado de tu
+                                                | propiedad, de esta forma puedes estar tranquilo y disfrutar tu tiempo
+                                                | haciendo lo que
+                                                | más te gusta.
+                                        button#botonVerMas2.btn.btn-success(type='button', data-toggle='collapse', data-target='#collapse2', aria-expanded='false', aria-controls='collapseExample', onclick='botonver("botonVerMas2")') Ver más
+                            .col-12.col-md-6.col-xl-4.p-1
+                                #hovercard3.card.wow.fadeIn(data-wow-delay='0.9s')
+                                    .card-body
+                                        .contenedor3
+                                            i.fas.fa-home
+                                        h5.card-title Soluciones a Propietarios
+                                        p.card-text En Cuadra por Cuadra queremos que tu vida sea mucho más fácil!
+                                        #collapse3.collapse
+                                            p
+                                                | Te brindamos una
+                                                | gran
+                                                | variedad de soluciones financieras, jurídicas, contables y tributarias, de
+                                                | la
+                                                | misma
+                                                | forma te ofrecemos diferentes opciones de inversión sobre inmuebles con
+                                                | rendimientos
+                                                | atractivos.
+                                        button#botonVerMas3.btn.btn-success(type='button', data-toggle='collapse', data-target='#collapse3', aria-expanded='false', aria-controls='collapseExample', onclick='botonver("botonVerMas3")') Ver más
+                                #hovercard4.card.mt-1.wow.fadeInDown(data-wow-delay='0.8s')
+                                    .card-body
+                                        .contenedor4
+                                            i.fas.fa-balance-scale
+                                        h5.card-title Avalúos
+                                        p.card-text ¡No tomes ninguna decisión antes de conocer el valor de tu inmueble!
+                                        #collapse4.collapse
+                                            p
+                                                | Tenemos a tu
+                                                | disposición un grupo de experimentados avaluadores, que cuentan con
+                                                | certificado de
+                                                | registro profesional (RNA) expedido por Fedelonjas, con el objetivo de
+                                                | ayudarte para
+                                                | que
+                                                | tomes la mejor decisión a la hora de arrendar, vender, hipotecar o
+                                                | actualizar el
+                                                | valor
+                                                | comercial de tu inmueble.
+                                        button#botonVerMas4.btn.btn-success(type='button', data-toggle='collapse', data-target='#collapse4', aria-expanded='false', aria-controls='collapseExample', onclick='botonver("botonVerMas4")') Ver más
+                            .col-12.col-md-12.col-xl-4.p-1
+                                .row.dimension-md-tarjeta
+                                    .col-12.col-md-6.col-xl-12
+                                        #hovercard5.card.wow.fadeInRight(data-wow-delay='0.8s')
+                                            .card-body
+                                                .contenedor5
+                                                    i.fas.fa-tools
+                                                h5.card-title Remodelaciones
+                                                p.card-text
+                                                    | ¿Deseas valorizar tu inmueble?
+                                                #collapse5.collapse
+                                                    p
+                                                        | Te ofrecemos asesoría personalizada para el diseño de
+                                                        | tus
+                                                        | remodelaciones teniendo en cuenta tu presupuesto, necesidades y las
+                                                        | diferentes
+                                                        | opciones
+                                                        | que ofrece el mercado. Analizando el entorno económico, geográfico y
+                                                        | funcional de la
+                                                        | propiedad con el objetivo de valorizar la misma en el mercado
+                                                        | inmobiliario.
+                                                button#botonVerMas5.btn.btn-success(type='button', data-toggle='collapse', data-target='#collapse5', aria-expanded='false', aria-controls='collapseExample', onclick='botonver("botonVerMas5")') Ver más
+                                    .col-12.col-md-6.col-xl-12
+                                        #hovercard6.card.mt-xl-1.wow.fadeInRight(data-wow-delay='0.8s')
+                                            .card-body
+                                                .contenedor6
+                                                    i.fas.fa-file-invoice-dollar
+                                                h5.card-title Compras desde el exterior
+                                                p.card-text
+                                                    | Te brindamos una gran variedad de opciones de inversión
+                                                    | en el
+                                                    | área
+                                                    | metropolitana.
+                                                #collapse6.collapse
+                                                    p
+                                                        | Teniendo en cuenta tus requerimientos, presupuesto y necesidades,
+                                                        | respaldándote en aspectos contables, jurídicos y financieros
+                                                        | independientemente del
+                                                        | lugar donde te encuentres. También te ofrecemos un conjunto de
+                                                        | estrategias
+                                                        | de
+                                                        | comunicación para brindarte Siempre la mejor atención.
+                                                button#botonVerMas6.btn.btn-success(type='button', data-toggle='collapse', data-target='#collapse6', aria-expanded='false', aria-controls='collapseExample', onclick='botonver("botonVerMas6")')
+                                                    | Ver más
+        section#proyectos
+            .container
+                .row.justify-content-center
+                    .col-12.col-xl-11
+                        .layout-titulo
+                        h2.decoracion-titulo
+                            span.cabeza-titulo Proyectos
+                    .col-12-pt-4.mt-4
+                        #carouselproyectos.carousel.slide.wow.bounceInRight(data-ride='carousel', data-wow-delay="0.8s")
+                            .carousel-inner.slide_proyectos
+                            a.carousel-control-prev(href='#carouselproyectos', role='button', data-slide='prev')
+                                span.carousel-control-prev-icon(aria-hidden='true')
+                                span.sr-only Previous
+                            a.carousel-control-next(href='#carouselproyectos', role='button', data-slide='next')
+                                span.carousel-control-next-icon(aria-hidden='true')
+                                span.sr-only Next
+                    .col-10.col-md-4.wow.fadeIn(data-wow-delay="1.2s")
+                        a.btn.btn-success.btn-md.btn-block.mt-4.d-flex.align-items-center.justify-content-center(href='/proyectos')
+                            | Ver m&aacute;s proyectos
+        section#asesores
+            .container
+                .row.justify-content-center
+                    .col-12.col-xl-11
+                        .layout-titulo
+                            h2.decoracion-titulo
+                                span.cabeza-titulo Nuestros asesores
+                    .col-11
+                        .row.justify-content-center.asesores
+                                
+
+
+        section#alianzas
+            .container-fluid
+                .row.justify-content-center
+                    .col-12.col-xl-11
+                        .layout-titulo
+                            h2.decoracion-titulo
+                                span.cabeza-titulo Nuestros Aliados
+                    .col-11
+                        .row.justify-content-center
+                            .col-12.col-md-6.col-xl-4.d-flex.justify-content-center.border-center.wow.fadeIn(data-wow-delay="0.8s")
+                                img(src='/static/images/logo_lonja.png', alt='', width='auto', height='150px;')
+                            .col-12.col-md-6.col-xl-4.d-flex.justify-content-center.border-center.wow.fadeIn(data-wow-delay="0.8s")
+                                img(src='/static/images/logo_simi.png', alt='', width='auto', height='150px;')
+                            .col-12.col-md-6.col-xl-4.d-flex.justify-content-center.border-center.wow.fadeIn(data-wow-delay="0.8s")
+                                img(src='/static/images/logo_nar.png', alt='', width='auto', height='150px;')

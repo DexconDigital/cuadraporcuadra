@@ -1,0 +1,13 @@
+.popup_inmuebles{
+    span{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    a{
+        color: $morado !important;
+        text-decoration: none;
+        &:hover{
+            color: $amarillo;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.bootpag {
+    justify-content: center;
+  li {
+    a {
+      position: relative;
+      display: block;
+      padding: 0.5rem 0.75rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      color: rgb(31, 26, 23);
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+    }
+  }
+  li.active {
+    a {
+      z-index: 1;
+      color: #fff;
+      background-color: rgb(163, 208, 37);
+      border-color: rgb(163, 208, 37);
+    }
+  }
+  .next.right-etc{
+    display: none !important;
+  }
+  .prev.left-etc{
+    display: none !important;
+  }
+  .prev.disabled.right-etc{
+    display: none !important;
+  }
+}

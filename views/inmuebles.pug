@@ -1,0 +1,84 @@
+extends layout
+
+block content 
+  .container-fluid.p-0.m-0.body
+    section#mapa
+      #map.w-100(style="height:450px; z-index:2;")
+    section#bread
+      .container-fluid
+        .row.col-12.col-xl-10.offset-xl-1
+          nav(aria-label='breadcrumb')
+            ol.breadcrumb.pb-4.pt-4.mb-0
+              li.breadcrumb-item
+                a(href='/') Inicio
+              li.breadcrumb-item.active(aria-current='page') Inmuebles
+    section#formulario
+      include includes/buscador.pug
+    section#destacadas.propiedades
+      .container
+        .row.justify-content-center
+            .col-11.col-md-12.col-xl-11
+              if r == "Sin resultados"
+                h3.text-center No Existen Inmuebles con esta busqueda
+              else
+                div.row
+                    -var total = r.Inmuebles.length;
+                        - var n = 0;
+                        - var inmuebles = r.Inmuebles;
+                            while n < total
+                              - var codigo= inmuebles[n].Codigo_Inmueble;
+                              - var codigo = codigo.replace("950-", "");
+                              - var url_detalle = url_host+'/detalleInmueble/codigo/'+codigo;
+                              .col-12.col-md-6.col-lg-4
+                                .card.mt-4.wow.fadeIn(data-wow-delay="0.6s")
+                                  .contenedor-imagen
+                                    a(href=url_detalle)
+                                      img.card-img-top(src=inmuebles[n].foto1)
+                                    .price
+                                      if inmuebles[n].Gestion == "Arriendo"
+                                        span=inmuebles[n].Canon
+                                      else if inmuebles[n].Gestion == "Venta"
+                                        span=inmuebles[n].Venta
+                                      else 
+                                        span #{inmuebles[n].Canon} / #{inmuebles[n].Venta}
+                                  .card-body
+                                    a(href=url_detalle)
+                                      h5.card-title=inmuebles[n].Tipo_Inmueble
+                                    ul.lista-caracteristicas
+                                      li
+                                        div(style='width:30px; padding-right:1px;')
+                                          i.fas.fa-barcode
+                                        | Cód #{codigo}
+                                      li
+                                        div(style='width:30px; padding-right:1px;')
+                                          i.fas.fa-city
+                                        =inmuebles[n].Gestion
+                                      li
+                                        div(style='width:30px; padding-right:1px;')
+                                          i.fas.fa-bath
+                                        =inmuebles[n].banios
+                                      li
+                                        div(style='width:30px; padding-right:1px;')
+                                          i.fas.fa-bed
+                                        =inmuebles[n].Alcobas
+                                      li
+                                        div(style='width:30px; padding-right:1px;')
+                                          i.fas.fa-compress-arrows-alt
+                                        =inmuebles[n].AreaConstruida
+                                      li
+                                        div(style='width:30px; padding-right:1px;')
+                                          i.fas.fa-warehouse
+                                        =inmuebles[n].garaje
+                                      li
+                                        div(style='width:30px; padding-right:1px;')
+                                          i.fas.fa-thumbtack
+                                        | #{inmuebles[n].Barrio} , #{inmuebles[n].Ciudad}    
+                              -n++
+            .col-11.col-md-8.mt-4.d-flex.justify-content-center
+                  #pagination-here.w-100
+
+  script.
+    var r = !{JSON.stringify(r)};
+    var fullUrl = !{JSON.stringify(fullUrl)};
+    var pagina = !{JSON.stringify(pagina)};
+    

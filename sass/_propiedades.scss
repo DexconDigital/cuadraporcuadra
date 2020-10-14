@@ -1,0 +1,9 @@
+.propiedades{
+    a{
+        color:$morado;
+        &:hover{
+            color: $verde;
+            text-decoration: none;
+        }
+    }
+}

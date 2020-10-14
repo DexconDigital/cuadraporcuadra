@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .container-fluid.p-0.m-0.body
+        section#hero
+                .card.bg-dark.text-white
+                    img.card-img.banner_proyecto(src="", alt="hero de pagina")
+                    .card-img-overlay.d-flex.justify-content-center.align-items-center
+                        h1 Proyectos
+        section#bread
+            .container-fluid
+                .row.col-12.col-xl-10.offset-xl-1
+                    nav(aria-label='breadcrumb')
+                        ol.breadcrumb.pb-4.pt-4.mb-0
+                            li.breadcrumb-item
+                                a(href='/') Inicio
+                            li.breadcrumb-item.active(aria-current='page') Proyectos
+        section#proyectos.propiedades
+            .container
+                #proyectos_lista.row.justify-content-center
+                    .col-11
+                        h2.proyectos_frase

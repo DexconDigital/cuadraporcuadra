@@ -1,0 +1,98 @@
+extends layout
+
+block content 
+    .container-fluid.p-0.m-0.body
+            section#hero
+                    .card.bg-dark.text-white
+                        img.card-img.banner_contacto(src="", alt="hero de pagina")
+                        .card-img-overlay.d-flex.justify-content-center.align-items-center
+                            h1 Contáctanos
+            section#bread
+                .container-fluid
+                    .row.col-12.col-xl-10.offset-xl-1
+                        nav(aria-label='breadcrumb')
+                            ol.breadcrumb.pb-4.pt-4.mb-0
+                                li.breadcrumb-item
+                                    a(href='/') Inicio
+                                li.breadcrumb-item.active(aria-current='page') Contáctanos
+            section#contacto
+                .container-fluid
+                    .row.col-12.col-xl-10.offset-xl-1.d-flex.justify-content-center.borde
+                        .col-12.col-xl-6
+                            h2.mb-4 Datos de Contacto
+                            dl.pt-4.mb-4
+                                dt Telefono:
+                                dd.d-flex.pt-1
+                                    a.d-flex(href='tel:+5744446891', target='_blank')
+                                        .mr-3(style='width:15px;')
+                                            i.fas.fa-phone.fa-rotate-90
+                                        |(57-4) 444 68 91
+                            dl.mb-4
+                                dt Celular y Whatsapp:
+                                dd.d-flex.pt-2
+                                    a.d-flex(href='tel:+573173003586', target='_blank')
+                                        .mr-3(style='width:15px;')
+                                            i.fas.fa-mobile-alt
+                                        |3173003586
+                                dd.d-flex.pt-1
+                                    a.d-flex(href='http://wa.me/573173003586', target='_blank')
+                                        .mr-3(style='width:15px;')
+                                            i.fab.fa-whatsapp
+                                        |3173003586
+                            dl.mb-4
+                                dt Correo:
+                                dd.d-flex.pt-1
+                                    a.d-flex(href='mailto:comercial@cuadraporcuadra.com')
+                                        .mr-3(style='width:15px;')
+                                            i.far.fa-envelope
+                                        |Comercial@
+                                        <br class="d-block d-md-none">cuadraporcuadra.com</br>
+                            dl
+                                dt Horarios
+                                dd.d-flex.pt-1
+                                    .mr-3(style='width:15px;')
+                                        i.far.fa-clock
+                                    | Lunes a viernes de 8:00am a 6:00pm
+                                dd.d-flex.pt-1
+                                    .mr-3(style='width:15px;')
+                                    | Sábados 8:30am a 12:30pm
+                            dl
+                                dt Ubicacion
+                                dd.d-flex.pt-1
+                                    .pr-3
+                                        i.fas.fa-map-marker-alt
+                                    |Carrera 51 # 50-21 Piso 15
+                                    |Medellín-Colombia
+                        .col-12.col-xl-6
+                            h2.mb-4 Formulario de Contacto
+                            form#form_contacto.needs-validation.pt-4(method="post", novalidate)
+                                .form-group
+                                    input#validationCustom01.form-control(name="nombre",type='text', placeholder='Nombre', required)
+                                    .invalid-feedback
+                                        |Ingrese su Nombre
+                                .form-group
+                                    input#validationCustom02.form-control(name="email",type='email', placeholder='Email' required)
+                                    .invalid-feedback
+                                        |Ingrese su Email
+                                .form-group
+                                    input#validationCustom03.form-control(name="telefono",type='number', placeholder='Telefono' required)
+                                    .invalid-feedback
+                                        |Ingrese su Telefono
+                                .form-group
+                                    textarea#exampleFormControlTextarea1.form-control(name="mensaje",rows='3', placeholder='Ingrese su Mensaje' required)
+                                    .invalid-feedback
+                                        |Ingrese su Mensaje
+                                .form-group.form-check
+                                    input#exampleCheck1.form-check-input(type='checkbox', required)
+                                    label.form-check-label(for='exampleCheck1')
+                                    | Confirmo que he leído,
+                                    | entendido y acepto la 
+                                    a(href='./static/pdf/POLITICA_DE_PRIVACIDAD_Y_PROTECCION_DE_DATOS_PERSONALES_CPC.pdf', download='POLITICA_DE_PRIVACIDAD_Y_PROTECCION_DE_DATOS_PERSONALES_CPC')
+                                        | politica de
+                                        | tratamiento de datos personales
+                                    .invalid-feedback
+                                        |Obligatorio
+                                button#send_contact.btn.btn-success(type='submit') Enviar
+                    .row.col-12.mt-4.pb-4
+                        .col-10.offset-1.pl-0.pr-0.mt-4
+                            iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18866.074593256424!2d-75.56804717052303!3d6.250074639885598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc759bfcb3a06142!2sCuadra+por+Cuadra+Inmobiliaria!5e0!3m2!1ses!2sco!4v1556081980392!5m2!1ses!2sco', width='100%', height='400', frameborder='0', style='border:0', allowfullscreen='')

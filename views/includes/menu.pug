@@ -1,0 +1,85 @@
+- var logo ="/static/images/logoCuadraPorCuadra.png";
+- var pse ="/static/images/logopse.png";
+- var link_pse="https://www.psepagos.co/PSEHostingUI/DatabaseTicketOffice.aspx?ID=7780";
+
+
+
+section#menu.fixed-menu
+  .container-fluid
+    .row.justify-content-center
+      .col-10.d-xl-flex.bd-highlight.d-none
+        .p-2.bd-highlight
+          a(href='tel:+5744446891')
+            i.fas.fa-phone.fa-rotate-90
+            span.pl-1 (57-4) 444 68 91
+        .p-2.bd-highlight.dropdown
+          .pl-2.borde-gris
+            i.fas.fa-mobile-alt
+            span.pl-1 317 3003586
+            .dropdown-content
+              .pt-1
+                a(href='tel:+573173003586')
+                  i.fas.fa-phone
+                  | Llamar
+              .pt-3
+                a(href='https://wa.me/573173003586')
+                  i.fab.fa-whatsapp
+                  | Enviar Mensaje
+        .mr-auto.p-2.bd-highlight
+        .p-2.bd-highlight
+          a(href='mailto:comercial@cuadraporcuadra.com')
+            i.far.fa-envelope
+            span.pl-1 Comercial@cuadraporcuadra.com
+    .row.justify-content-center
+      .col-12.col-xl-10
+        nav.navbar.navbar-expand-xl.navbar-light.bg-light.p-0
+          a.navbar-brand(href='/')
+            img(src=logo, alt='logoCuadraPorCuadra', width='auto')
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarNavDropdown.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto.align-items-center
+              if title == "inicio" 
+                li.nav-item
+                  a.nav-link.active(href='/') Inicio 
+              else
+                li.nav-item
+                  a.nav-link(href='/') Inicio
+              if title == "nosotros"
+                li.nav-item
+                  a.nav-link.active(href='/nosotros') Nosotros
+              else
+                li.nav-item
+                  a.nav-link(href='/nosotros') Nosotros
+              if title == "inmuebles"
+                li.nav-item
+                  a.nav-link.active(href='/inmuebles') Inmuebles
+              else
+                li.nav-item
+                  a.nav-link(href='/inmuebles') Inmuebles
+              if title == "proyectos"
+                li.nav-item
+                  a.nav-link.active(href='/proyectos') Proyectos
+              else
+                li.nav-item
+                  a.nav-link(href='/proyectos') Proyectos
+              if title == "clientes"
+                li.nav-item
+                  a.nav-link.active(href='/clientes') Clientes
+              else   
+                li.nav-item
+                    a.nav-link(href='/clientes') Clientes
+              li.nav-item
+                a.nav-link(href='https://portal.cuadraporcuadra.com', target='_blank') Portal
+              if title =="contactenos"
+                li.nav-item
+                  a.nav-link.active(href='/contactenos') Contáctenos
+              else
+                li.nav-item
+                  a.nav-link(href='/contactenos') Contáctenos
+              li.nav-item
+                a.nav-link(href=link_pse, target='_blank')
+                  img(src=pse, alt='', height='50px')
+.espaciomenu(style='height:166px;')
+
+

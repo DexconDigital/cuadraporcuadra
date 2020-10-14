@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(charset='utf-8')
+    title #{title} - Cuadra por Cuadra
+
+    meta(name='description', content='Brindamos servicios inmobiliarios en forma integral, creando valor a nuestros clientes. La orientación al logro y la mejora continua garantizan soluciones efectivas y oportunas a nuestros grupos de interés.')
+    meta(name='keywords', content='Inmobiliarias Medellín, Soluciones Inmobiliarias, Apartamentos para arrendar en Medellín,	Inmobiliaria Cuadra por Cuadra,')
+    meta(name='author', content='Dexcon Digital')
+    link(rel='canonical', href='https://cuadraporcuadrainmobiliaria.com/')
+    meta(property='og:type', content='website')
+    meta(property='og:title', content='Inmobiliaria Cuadra por Cuadra')
+    link(rel='icon', href='/static/images/favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/fontcss/css/all.min.css')
+    link(rel='stylesheet', href="/static/css/style.css")
+    if title == "Inicio"
+      //- css
+      link(rel='stylesheet', href="/static/css/doubleSlide.css")
+      //- Metadatos
+      meta(property="og:description" content ="Cuadra por Cuadra, Nuestra Meta son tus sueños")
+      meta(property='og:image', itemprop='image', content='https://www.cuadraporcuadrainmobiliaria.com/static/images/logoCuadraPorCuadra.jpg')
+      meta(property='og:image:type', content='image/jpeg')
+      meta(property='og:image:width', content='150')
+      meta(property='og:image:height', content='150')
+      meta(property='og:url', content='https://www.cuadraporcuadrainmobiliaria.com')
+    if title == "Nosotros"
+      link(rel='stylesheet', href="/static/css/owl.carousel.min.css")
+      link(rel='stylesheet', href="/static/css/owl.theme.default.min.css")
+    if title == "Inmuebles"
+      link(rel='stylesheet', href="/static/css/doubleSlide.css")
+      link(rel="stylesheet", href="/leaflet/leaflet.css")
+    if title == "Detalle Inmueble"
+      link(rel="stylesheet", href="/slick/slick.css")
+      link(rel="stylesheet", href="/slick/slick-theme.css")
+      link(rel="stylesheet", href="/static/css/jquery.fancybox.min.css")
+      link(rel="stylesheet", href="/leaflet/leaflet.css")
+      link(rel="stylesheet", href="/toastr/toastr.min.css")
+      - var description = r.Tipo_Inmueble+' en ' +r.Gestion+ ' Ubicado en '+r.barrio+', '+r.ciudad;
+      - var imagen = r.fotos[0].foto;
+      meta(property="og:description" content=description)
+      meta(property='og:image', itemprop='image', content=imagen)
+      meta(property='og:image:type', content='image/jpeg')
+      meta(property='og:image:width', content='150')
+      meta(property='og:image:height', content='150')
+      meta(property='og:url', content='https://www.cuadraporcuadrainmobiliaria.com')
+    if title == "Contactenos"
+      link(rel="stylesheet", href="/toastr/toastr.min.css")
+    //- todas las paginas 
+    link(rel='stylesheet', href="/wowcss/animate.css")
+
+  body(style="display:flex; min-height:100vh; flex-direction: column;")
+    //- Preloader
+    #wrap-preload
+      img#gif.gif(src='/static/images/preloader.gif', alt='gif')
+    //- Fin de preloader
+
+    //- incluir menu
+    include includes/menu.pug
+    //- Fin de menu
+
+    //- Contenido paginas web 
+    block content
+    //- Fin de contenido paginas web 
+    include includes/footer.pug
+

@@ -1,0 +1,230 @@
+extends layout
+
+block content 
+  - var link_imprimir_ficha ='https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=950-'+r.codinm+'';
+  - var imagen = r.fotos[0].foto;
+  - var compartir_facebook = "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.cuadraporcuadrainmobiliaria.com%2FdetalleInmueble%2Fcodigo%2F"+r.codinm+'';
+  - var compartir_whatsapp = "https://wa.me/?text=%20https://cuadraporcuadrainmobiliaria.com/detalleInmueble/codigo/"+r.codinm+'';
+  - var contacto_whatsapp = "https://wa.me/573173003586";
+  
+  link(itemprop='thumbnailUrl', href=imagen)
+  span(itemprop='thumbnail', itemscope='', itemtype='http://schema.org/ImageObject')
+  link(itemprop='url', href=imagen)
+  #detalle-inmueble.container-fluid.p-0.m-0.body
+    section#hero
+      .card.bg-dark.text-white
+        img.card-img.banner_detalle(src, alt="hero de pagina")
+        .card-img-overlay.d-flex.justify-content-center.align-items-center
+          h1 Detalle Inmueble
+    section#bread
+      .container-fluid
+        .row.col-12.col-xl-10.offset-xl-1
+          nav(aria-label='breadcrumb')
+            ol.breadcrumb.pb-4.pt-4.mb-0
+              li.breadcrumb-item
+                a(href='/') Inicio
+              li.breadcrumb-item.active(aria-current='page') Detalle Inmueble
+    section#detalle-inmuble
+      .container
+        .row
+          .col-12.col-md-8
+            section#slide-detalle.mt-3
+                -var total = r.fotos.length;
+                - var n = 0;
+                while n < total
+                    .contenedor-img
+                        a(data-fancybox='gallery', href=r.fotos[n].foto)
+                          img(src=r.fotos[n].foto, alt='')
+                    -n++
+            section#miniaturas.vertical-center-4.slider.mb-4
+                -var total = r.fotos.length;
+                - var n = 0;
+                while n < total
+                    .contenedor-img
+                          img(src=r.fotos[n].foto, alt='')
+                    -n++
+            
+            section#caracteristicas
+              .card
+                .card-body
+                  .card-title Características Básicas
+                  ul.row
+                    li.col-12.col-md-6.col-lg-4
+                      | Cód: #{r.codinm}
+                    li.col-12.col-md-6.col-lg-4
+                      i.fas.fa-map-signs
+                      =r.Gestion
+                    li.col-12.col-md-6.col-lg-4
+                      i.fas.fa-home
+                      =r.Tipo_Inmueble
+                    if r.alcobas != "0"
+                      li.col-12.col-md-6.col-lg-4
+                        i.fas.fa-bed
+                        =r.alcobas
+                    if r.banos != "0"
+                      li.col-12.col-md-6.col-lg-4
+                        i.fas.fa-bath
+                        =r.banos
+                    if r.garaje != "0"
+                      li.col-12.col-md-6.col-lg-4
+                        i.fas.fa-car
+                        =r.garaje
+                    if r.Administracion != "0"
+                      li.col-12.col-md-6.col-lg-4
+                        i.fas.fa-user
+                        =r.Administracion
+                    if r.AreaConstruida != "0"
+                      li.col-12.col-md-6.col-lg-4
+                        i.fas.fa-ruler-combined
+                        | #{r.AreaConstruida} m2
+                    if r.Estrato != "0"
+                      li.col-12.col-md-6.col-lg-4
+                        |Estrato: #{r.Estrato}
+                    li.col-12.col-md-6.col-lg-4
+                      i.fas.fa-map-marked-alt
+                      |#{r.barrio} , #{r.ciudad}
+                    if r.precio !="0"
+                      li.col-12.col-md-6.col-lg-4
+                        i.fas.fa-dollar-sign
+                        | #{r.precio}
+                      
+                    
+                    
+
+            section#descripcion
+              .card.mt-4
+                .card-body
+                  .card-title
+                    | Descripción
+                  .card-text=r.descripcionlarga
+
+            section#caracteristicas_details.mt-4
+              #accordionExample.accordion
+                if r.caracteristicasInternas.length != 0
+                  .card
+                    #headingOne.row.align-items-center.card-header(data-toggle='collapse', data-target='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                      h2.mb-0.col-11
+                          | Características Internas
+                      i.fas.fa-plus-circle.col-1
+                    #collapseOne.collapse(aria-labelledby='headingOne', data-parent='#accordionExample')
+                      .card-body
+                        -var total = r.caracteristicasInternas.length;
+                        - var n = 0;
+                        ul
+                          while n < total
+                            li.col-12.col-md-6.col-lg-4
+                              =r.caracteristicasInternas[n].Descripcion
+                            -n++
+
+                if r.caracteristicasExternas.length != 0
+                  .card.mt-4
+                    #headingTwo.row.align-items-center.card-header(data-toggle='collapse', data-target='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                      h2.mb-0.col-11
+                          | Características Externas
+                      i.fas.fa-plus-circle.col-1
+                    #collapseTwo.collapse(aria-labelledby='headingTwo', data-parent='#accordionExample')
+                      .card-body
+                        -var total = r.caracteristicasExternas.length;
+                          - var n = 0;
+                          ul
+                            while n < total
+                              li.col-12.col-md-6.col-lg-4
+                                =r.caracteristicasExternas[n].Descripcion
+                              -n++
+
+                if r.caracteristicasAlrededores.length != 0
+                  .card.mt-4
+                    #headingThree.row.align-items-center.card-header(data-toggle='collapse', data-target='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+                      h2.mb-0.col-11
+                          | Características Alrededores
+                      i.fas.fa-plus-circle.col-1
+                    #collapseThree.collapse(aria-labelledby='headingThree', data-parent='#accordionExample')
+                      .card-body
+                        -var total = r.caracteristicasAlrededores.length;
+                            - var n = 0;
+                            ul
+                              while n < total
+                                li.col-12.col-md-6.col-lg-4
+                                  =r.caracteristicasAlrededores[n].Descripcion
+                                -n++
+          
+          .col-12.col-md-4
+            section#redes
+              .card.mt-3
+                .card-body
+                  a.btn.btn-success.btn-md.btn-block.mb-4(href=link_imprimir_ficha, target="_blank") Imprimir Ficha
+                  .row.mt-4
+                    .col-6
+                      h6 Compartir Por:
+                    .offset-2.col-4.d-flex
+                      a.contenedor-img.mr-4(href=compartir_facebook, target="_blank")
+                        img(src='/static/images/facebook.png', alt='')
+                      a.contenedor-img(href=compartir_whatsapp, target ="_blank")
+                        img(src='/static/images/whatsapp.png', alt='')
+
+            section#formulario_contacto
+              .card.mt-3
+                .card-body
+                  .card-title Nos comunicamos contigo  
+                  form#form_detalle(method="post")
+                    input(type='hidden', name='id', value=r.codinm)
+                    input(type='hidden', name='correoAsesor', value=r.asesor[0].correo)
+                    .form-group
+                      input#exampleInputEmail1.form-control(name='nombre', type='text', placeholder='Nombre', required)
+                    .form-group
+                      input#exampleInputEmail2.form-control(name='telefono', type='tel', placeholder='Teléfono', required)
+                    .form-group
+                      input#exampleInputEmail2.form-control(name='email', type='email', placeholder='Correo', required)
+                    .form-group
+                      textarea#exampleFormControlTextarea1.form-control(name='mensaje', rows='3', placeholder='Mensaje', required)
+                    .form-group.form-check
+                      input#exampleCheck1.form-check-input(type='checkbox', required)
+                      label.form-check-label(for='exampleCheck1')
+                        | Acepto que he leído la 
+                        a(href='./static/pdf/POLITICA_DE_PRIVACIDAD_Y_PROTECCION_DE_DATOS_PERSONALES_CPC.pdf', download='POLITICA_DE_PRIVACIDAD_Y_PROTECCION_DE_DATOS_PERSONALES_CPC')
+                          | politica de
+                          | tratamiento de datos personales
+                    button#send_detalle.btn.btn-success.mx-auto(type='submit') Enviar
+
+            section#redes
+              .card.mt-3
+                .card-body.p-0
+                  .col-12.border.text-center
+                      .card-title Escríbenos por WhatsApp        
+                        .col-12.d-flex.justify-content-center
+                          .col-lg-3.col-md-5.col-3
+                            a.contenedor-img(href=contacto_whatsapp, target ="_blank")
+                              img(src='/static/images/whatsapp.png', alt='')
+
+            section#mapa.mt-4
+              .card
+                .card-body
+                  #map.w-100
+
+            if r.video != null
+              section#video_detalle
+                  .card.mt-4
+                    .card-body
+                      .card-title Video
+                      iframe.w-100(height='280', src= r.video, frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+          
+          //- Esperando carga de una foto para probar 
+          if r.video360 != null
+            .col-12
+              .card.mt-4
+                .card-body
+                  .card-title Recorrido Virtual
+                  div#foto360(style='max-width: 100%; position: relative; height:0; overflow: hidden; ')
+                    iframe(webkitallowfullscreen='', mozallowfullscreen='', allowfullscreenframeborder='0', style='position: absolute; top: 0; left:0; width: 100%; height:100%', src=r.video360)                      
+
+          .col-12
+            section#similares.propiedades.mt-4
+              .card 
+                .card-body
+                  .card-title.mb-4 Propiedades similares
+                  #propiedaes_similares.row
+                  
+      script.
+        var r = !{JSON.stringify(r)};
+        var h = !{JSON.stringify(fullUrl)};
+        console.log(r);

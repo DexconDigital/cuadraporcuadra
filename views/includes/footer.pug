@@ -1,0 +1,128 @@
+- var facebook_link='https://www.facebook.com/cuadraporcuadra/';
+- var instagram_link='https://www.instagram.com/cuadraporcuadra/';
+- var whatsapp_link='https://api.whatsapp.com/send?phone=573173003586&text=&source=&data=';
+- var link_pse="https://www.psepagos.co/PSEHostingUI/DatabaseTicketOffice.aspx?ID=7780";
+
+footer#pie
+  .container-fluid
+    .row
+      .col-12.text-center
+        h6.mt-4.mb-4
+          | ©Copyright 2019 
+          a(href='https://dexcondigital.com') Dexcon Digital.
+          |  Todos los derechos reservados
+
+i.fas.fa-chevron-up.subir
+
+.redes
+  ul
+    li
+      a(href=whatsapp_link, target='blank')
+        img(src='/static/images/whatsapp2.png', alt='')
+    li
+      a(href=facebook_link, target='blank')
+        img(src='/static/images/facebook.jpg', alt='')
+    li
+      a(href=instagram_link, target='blank')
+        img(src='/static/images/instagram.png', alt='')
+
+.contenedor-flotante
+  button.botonF1
+    i.fas.fa-plus
+  a.btn1.botonF2(href='tel:+573173003586', target='_blank')
+    i.fas.fa-phone
+  a.btn1.botonF3(href=whatsapp_link, target='_blank')
+    i.fab.fa-whatsapp
+  a.btn1.botonF4(href=instagram_link, target='_blank')
+    i.fab.fa-instagram
+  a.btn1.botonF5(href=facebook_link, target='_blank')
+    i.fab.fa-facebook-f
+  a.btn1.botonF6(href=link_pse, target='_blank')
+    img(src='/static/images/logopse.png', alt='', width='40px')
+
+
+script(src="/js/jquery.min.js")
+script(src="/js/bootstrap.bundle.min.js")
+
+script(src="/static/js/menu.js")
+script(src="/static/js/script.js")
+
+if title == "Inicio"
+  script(src="/static/js/doubleslide.js")
+  script(src="/api/token_api.js")
+  script(src="/api/validadores.js")
+  script(src="/api/buscador.js")
+  script(src="/api/modelo_inmueble.js")
+  script(src="/api/inmuebles_destacados.js")
+  script(src="/static/cliente/js/index.js")
+  script.
+    $('.carousel-inner div:first-child').addClass('active');
+if title == "Nosotros"
+  script(src="/static/cliente/js/nosotros.js")
+  script(src="/static/js/owl.carousel.min.js")
+  script(src="/static/js/owlCarouselStar.js")
+if title =="Inmuebles"
+  script(src="/static/js/doubleslide.js")
+  script(src="/api/token_api.js")
+  script(src="/api/validadores.js")
+  script(src="/api/buscador.js")
+  script(src="/api/modelo_inmueble.js")
+  script(src="/leaflet/leaflet.js")
+  script(src="/static/js/paginador.js")
+  script(src="/static/js/start_Inmuebles.js")
+  script(src="/static/js/responsive-paginate.js")
+if title == "Detalle Inmueble"
+  script(src="/api/token_api.js")
+  script(src="/api/validadores.js")
+  script(src="/static/cliente/js/detalleInmueble.js")
+  script(src="/slick/slick.min.js")
+  script(src="/static/js/jquery.fancybox.min.js")
+  script(src="/leaflet/leaflet.js")
+  script(src="/static/js/start_detalle.js")
+  script(src="/api/modelo_inmueble.js")
+  script(src="/api/propiedades_similares.js")
+  script(src="/toastr/toastr.min.js")
+  script(src="/static/js/envio_mail_detalle.js")
+
+if title == "Clientes"
+  script(src="/static/cliente/js/cliente.js")
+
+if title == "Proyectos"
+  script(src="/static/cliente/js/proyecto.js")
+
+if title == "Contactenos"
+  script(src="/static/cliente/js/contactanos.js")
+  script(src="/toastr/toastr.min.js")
+  script(src="/static/js/envio_mail.js")
+  script.
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+//- script de carga del preloader
+script.
+  var ocultar = function() {
+  setTimeout(function() {
+  loader.style.visibility = "hidden";
+  }, 1500)
+  }
+  var loader = document.getElementById("wrap-preload");
+  window.addEventListener("load", ocultar());
+//- Boton
+script(src="/wowjs/wow.min.js")
+script.
+  new WOW().init();
+

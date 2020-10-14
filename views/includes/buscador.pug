@@ -1,0 +1,48 @@
+.container-fluid.wow.fadeIn
+    .row.justify-content-center
+        .col-10
+            h2.text-center Busca tu inmueble
+            form(autocomplete='off')
+            .form.row
+                .col-12.col-md-6.col-xl-3
+                    input#codigo_buscar.form-control(type='number', placeholder='Código',autocomplete="off")
+                .col-12.col-md-6.col-xl-3
+                    select#ciudad_buscar.form-control
+                        option(value='0') Ciudad
+                .col-12.col-md-6.col-xl-3
+                    select#barrio_buscar.form-control
+                        option(value='0') Barrio
+                .col-12.col-md-6.col-xl-3
+                    select#tipo_inmueble_buscar.form-control
+                        option(value='0') Tipo Inmueble
+                .col-12.col-md-6.col-xl-4
+                    select#tipo_gestion_buscar.form-control
+                        option(value='0') Arriendo o Venta
+                .col-12.col-md-6.col-xl-4
+                    input#banos_buscar.form-control(type='number', placeholder='Baños')
+                .col-12.col-md-6.col-xl-4
+                    input#alcobas_buscar.form-control(type='number', placeholder='Alcobas')
+                .col-12.col-md-6.col-xl-4.d-flex.align-items-center
+                    label.pr-3(for='precio') Precio
+                    input#precio_minimo_buscar.form-control.mr-1(type='number', placeholder='Mínimo')
+                    |-
+                    input#precio_maximo_buscar.form-control.ml-1(type='number', placeholder='Máximo')
+                .col-12.col-md-6.col-xl-4.d-flex.align-items-center
+                    .form-group.col-12
+                        label(for='') Area
+                        #slider-range2
+                        .slider-labels.d-flex
+                            .caption
+                            strong Min:
+                            span#slider-range-area
+                            |  m
+                            sup 2
+                            .caption.ml-auto
+                            strong Max:
+                            span#slider-range-area1
+                            |  m
+                            sup 2
+                        input#area_minima_buscar(type='hidden', value='')
+                        input#area_maxima_buscar(type='hidden', value='')
+                .col-12.col-md-6.col-xl-4
+                    button#buscar.btn.btn-success.btn-md.btn-block(type='button') Buscar

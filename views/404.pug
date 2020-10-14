@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    style.
+        .fixed-menu, footer, .espaciomenu{
+            display:none;
+        }
+    .container-fluid.p-0.m-0.body
+        #error.container.wow.fadeIn
+            .row.justify-content-center.align-items-center.hv-100
+                .col-12.text-center
+                    h2 ¡No Encontramos lo que buscabas!
+                .col-12.text-center
+                    .contenedor-img
+                        img.img-fluid(src="/static/images/logoCuadraPorCuadra.png")
+                .col-12
+                    .row.justify-content-center
+                        .col-4
+                            a.btn.btn-success.btn-md.btn-block.mt-4.d-flex.align-items-center.justify-content-center(href='/')
+                                | Volver al inicio
